@@ -86,7 +86,7 @@ function enviarPedido(){
     mensagem +=
     `\nTotal: R$ ${total.toFixed(2)}`;
 
-    const numero = "558186574537";
+    const numero = "558189004681";
 
     const url =
     `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
