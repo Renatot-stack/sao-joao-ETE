@@ -72,16 +72,34 @@ function atualizarTudo(){
     for(let item in pedidos){
 
         lista.innerHTML += `
-        <div class="item-carrinho">
-            <h4>${item}</h4>
-            <p>
-            Quantidade: ${pedidos[item].quantidade}
-            </p>
-            <p>
-            R$ ${(pedidos[item].preco * pedidos[item].quantidade).toFixed(2)}
-            </p>
-        </div>
-        `;
+            <div class="item-carrinho">
+
+                <h4>${item}</h4>
+
+                <div class="controle-carrinho">
+
+                    <button
+                    onclick="remover('${item}', ${pedidos[item].preco})">
+                        −
+                    </button>
+
+                    <span>
+                        ${pedidos[item].quantidade}
+                    </span>
+
+                    <button
+                    onclick="adicionar('${item}', ${pedidos[item].preco})">
+                        +
+                    </button>
+
+                </div>
+
+                <p>
+                    R$ ${(pedidos[item].preco * pedidos[item].quantidade).toFixed(2)}
+                </p>
+
+            </div>
+            `;
     }
 
 
@@ -114,16 +132,23 @@ function atualizarTudo(){
     };
 
     for(let nome in mapaIds){
-
         let elemento =
         document.getElementById(mapaIds[nome]);
 
         if(elemento){
-            elemento.innerHTML =
-                pedidos[nome]
-                ? pedidos[nome].quantidade
-                : 0;
+
+            let quantidade = 0;
+
+            for(let item in pedidos){
+
+                if(item.startsWith(nome)){
+                    quantidade += pedidos[item].quantidade;
+                }
+
+            }
+
+            elemento.innerHTML = quantidade;
         }
-    };
+    }
 
 }
