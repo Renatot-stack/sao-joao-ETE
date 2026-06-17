@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hambúrguer da Pisadinha | Sala Ascendentes</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="css/sala8.css">
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<header class="topo">
+
+<div class="logo">
+Ascendentes • ETE JNPR
+</div>
+
+</header>
+
+<section class="hero">
+<div class="hero-conteudo">
+<div class="mascote">
+<img src="media/images/logo_sala8.jpeg">
+</div>
+<h1>
+Hambúrguer da Pisadinha
+</h1>
+<h2>
+Sala 08 • Ascendentes
+</h2>
+
+<p>
+O sabor que faz todo mundo entrar na dança! Os hambúrgueres
+da Pisadinha são preparados na hora, com ingredientes frescos,
+carne suculenta e aquele toque especial que transforma cada
+lanche em uma experiência inesquecível.
+</p>
+
+
+<a href="#cardapio" class="botao-cardapio">
+Ver Cardápio
+</a>
+
+
+</div>
+
+
+</section>
+
+
+<section class="evento">
+
+<h2 class="titulo">
+Nossa Barraca
+</h2>
+
+<p>
+A Sala Ascendentes apresenta o Hambúrguer da Pisadinha,
+uma barraca criada para reunir sabor, diversão e muita
+energia no São João da ETE. Nossa missão é servir
+hambúrgueres deliciosos, preparados com carinho e
+qualidade para toda a comunidade.
+</p>
+
+<p>
+Venha experimentar nossos lanches tradicionais e
+artesanais e descubra por que o Hambúrguer da Pisadinha
+é uma das paradas obrigatórias da festa.
+</p>
+<p>
+Instagram: <a href="https://www.instagram.com/ascendentes_ete?igsh=MXkxc3EwNWxiZGp3dg==">@ascendentes_ete</a>
+</p>
+
+</section>
+
+
+<section class="atracoes">
+
+
+<div class="card-atracao">
+
+<img src="media/images/jeanaraujo.jpeg">
+
+<h3>
+Presença ilustre do cantor <i>Jean Araújo</i>
+</h3>
+
+</div>
+
+
+<div class="card-atracao">
+
+<img src="media/images/deblima.jpeg">
+
+<h3>
+Grande show da noite - Deb Lima
+</h3>
+
+</div>
+
+</section>
+
+<section class="cardapio" id="cardapio">
+
+<h2 class="titulo">
+Nosso Cardápio
+</h2>
+
+<h3 class="titulo">
+Hambúrgueres
+</h3>
+
+
+<div class="grade-cardapio">
+
+<div class="produto">
+
+<div class="selo">
+Mais vendido
+</div>
+
+<img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd">
+
+<div class="conteudo">
+
+<h3>Hambúrguer Tradicional</h3>
+
+<p>
+O clássico que nunca decepciona: pão macio,
+hambúrguer grelhado, salada fresca e queijo
+mussarela derretido.
+</p>
+
+<div class="preco">
+R$ 8,00
+</div>
+<div class="controle">
+<div class="quantidade" id="qtd-Tradicional">
+0
+</div>
+<button onclick="adicionar('Hambúrguer Tradicional',8)">
++
+</button>
+</div>
+</div>
+</div>
+
+<div class="produto">
+
+<img src="https://images.unsplash.com/photo-1550547660-d9450f859349">
+
+<div class="conteudo">
+
+<h3>X-Egg</h3>
+
+<p>
+Nosso tradicional ganha ainda mais sabor
+com um ovo frito preparado na hora.
+</p>
+
+<div class="preco">
+R$ 10,00
+</div>
+
+<div class="controle">
+
+<div class="quantidade" id="qtd-XEgg">
+0
+</div>
+
+<button onclick="adicionar('X-Egg',10)">
++
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="produto">
+
+<img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add">
+
+<div class="conteudo">
+
+<h3>Hambúrguer Artesanal</h3>
+
+<p>
+Carne artesanal mais alta e suculenta,
+acompanhada de salada fresca e mussarela.
+</p>
+
+<div class="preco">
+R$ 12,00
+</div>
+
+<div class="controle">
+
+<div class="quantidade" id="qtd-Artesanal">
+0
+</div>
+
+<button onclick="adicionar('Hambúrguer Artesanal',12)">
++
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="produto">
+
+<div class="selo">
+Especial
+</div>
+
+<img src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5">
+
+<div class="conteudo">
+
+<h3>X-Egg Artesanal</h3>
+
+<p>
+A combinação mais completa da casa:
+carne artesanal, ovo, queijo cheddar,
+salada e muito sabor.
+</p>
+
+<div class="preco">
+R$ 15,00
+</div>
+
+<div class="controle">
+
+<div class="quantidade" id="qtd-XEggArtesanal">
+0
+</div>
+
+<button onclick="adicionar('X-Egg Artesanal',15)">
++
+</button>
+</div>
+</div>
+</div>
+
+</div>
+
+</section>
+<div class="painel-carrinho" id="carrinho">
+
+<button class="fechar" onclick="fecharCarrinho()">&Cross;</button>
+
+<h2 class="titulo-carrinho">
+🛒 Seu Pedido
+</h2>
+
+<div id="listaCarrinho">
+    <p>Seu carrinho está vazio.</p>
+</div>
+
+<div class="total-carrinho">
+Total: R$ <span id="valorTotal">0.00</span>
+</div>
+
+<button class="finalizar" onclick="finalizarPedido()">
+Finalizar Pedido
+</button>
+
+</div>
+
+<footer>
+
+Hambúrguer da Pisadinha • Sala Ascendentes<br>
+Feito na hora, servido com sabor!
+
+</footer>
+
+<div class="botao-carrinho">
+
+🛒
+
+<div class="contador">
+0
+</div>
+
+</div>
+
+<div id="popupNome" class="popup">
+
+<div class="popup-conteudo">
+
+    <h2>Qual o seu nome?</h2>
+
+    <p>É necessário seu nome para que o operador do caixa possa confirmar que o pedido realmente é seu.</p>
+
+    <input
+        type="text"
+        id="nomeCliente"
+        placeholder="Digite seu nome">
+
+    <button onclick="enviarPedido()">
+        Confirmar Pedido
+    </button>
+
+    <button id="cancelar" onclick="fecharPopupNome()">
+        Cancelar
+    </button>
+
+</div>
+
+</div>
+
+<script src="js/script.js"></script>
+<script src="js/sala8.js"></script>
+</body>
+</html>
