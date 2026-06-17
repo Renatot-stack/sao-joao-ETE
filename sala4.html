@@ -15,6 +15,32 @@
 </head>
 <body>
 
+<div id="popupRecheio" class="popup">
+
+    <div class="popup-conteudo">
+
+        <h2>Escolha o recheio</h2>
+
+        <button onclick="confirmarRecheio('normal')">
+            Tradicional
+        </button>
+
+        <button onclick="confirmarRecheio('Catupiry')">
+            Com Catupiry
+        </button>
+
+        <button onclick="confirmarRecheio('Mussarela')">
+            Com Mussarela
+        </button>
+
+        <button id="cancelar" onclick="fecharPopupRecheio()">
+            Cancelar
+        </button>
+
+    </div>
+
+</div>
+
 <header class="topo">
 
 <div class="logo">
@@ -128,14 +154,16 @@ Tapioca na manteiga, simples e deliciosa.
 <div class="preco">
 R$ 6,00
 </div>
-
-<div class="quantidade" id="qtd-Tradicional">
-0
+<div class="controle">
+    
+    <div class="quantidade" id="qtd-Tradicional">
+    0
+    </div>
+    
+    <button onclick="adicionar('Tradicional',6)">
+    +
+    </button>
 </div>
-
-<button onclick="adicionar('Tradicional',6)">
-+
-</button>
 </div>
 </div>
 
@@ -151,17 +179,18 @@ Frango desfiado com opção de Catupiry ou Mussarela.
 <div class="preco">
 R$ 10,00
 </div>
-
-<div class="quantidade" id="qtd-Frango">
-0
+<div class="controle">
+    
+    <div class="quantidade" id="qtd-Frango">
+    0
+    </div>
+    
+    <button onclick="abrirPopupRecheio('Frango',10)">
+    +
+    </button>
 </div>
-
-<button onclick="adicionar('Frango',10)">
-+
-</button>
 </div>
 </div>
-
 
 <div class="produto">
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkb4yGrOJceZ74VcRcWgha23p68JIV2o6vug2_Ilk7TA&s=10">
@@ -176,13 +205,15 @@ Charque com opção de Catupiry ou Mussarela.
 R$ 12,00
 </div>
 
-<div class="quantidade" id="qtd-Charque">
-0
+<div class="controle">
+    <div class="quantidade" id="qtd-Charque">
+    0
+    </div>
+    
+    <button onclick="abrirPopupRecheio('Charque',12)">
+    +
+    </button>
 </div>
-
-<button onclick="adicionar('Charque',12)">
-+
-</button>
 </div>
 </div>
 
@@ -199,13 +230,15 @@ Muito queijo mussarela derretido.
 R$ 10,00
 </div>
 
-<div class="quantidade" id="qtd-Charque">
-0
+<div class="controle">
+    <div class="quantidade" id="qtd-Mussarela">
+    0
+    </div>
+    
+    <button onclick="adicionar('Mussarela',10)">
+    +
+    </button>
 </div>
-
-<button onclick="adicionar('Charque',12)">
-+
-</button>
 </div>
 </div>
 
@@ -222,13 +255,15 @@ Queijo mussarela e presunto.
 R$ 10,00
 </div>
 
-<div class="quantidade" id="qtd-Charque">
-0
+<div class="controle">
+    <div class="quantidade" id="qtd-Mista">
+    0
+    </div>
+    
+    <button onclick="adicionar('Mista',10)">
+    +
+    </button>
 </div>
-
-<button onclick="adicionar('Charque',12)">
-+
-</button>
 </div>
 </div>
 
@@ -245,13 +280,15 @@ Calabresa refogada e bem temperada.
 R$ 10,00
 </div>
 
-<div class="quantidade" id="qtd-Charque">
-0
+<div class="controle">
+    <div class="quantidade" id="qtd-Calabresa">
+    0
+    </div>
+    
+    <button onclick="adicionar('Calabresa',10)">
+    +
+    </button>
 </div>
-
-<button onclick="adicionar('Charque',12)">
-+
-</button>
 </div>
 </div>
 </div>
@@ -262,135 +299,249 @@ Tapiocas Doces
 
 <div class="grade-cardapio">
 
+<!-- Creme de Avelã com Morango -->
+
 <div class="produto">
-<img src="URL_DA_IMAGEM">
+<div class="selo">
+Mais pedido
+</div>
+
+<img src="media/images/creme-avela-morango.jpg">
+
 <div class="conteudo">
-<h3>Brigadeiro</h3>
+
+<h3>Creme de Avelã com Morango</h3>
+
 <p>
-Recheio cremoso de brigadeiro tradicional.
+A combinação perfeita entre creme de avelã e morangos frescos.
 </p>
+
 <div class="preco">
 R$ 11,00
 </div>
+
 <div class="controle">
-<div class="quantidade" id="qtd-Brigadeiro">
+
+<div class="quantidade" id="qtd-CremeAvelaMorango">
 0
 </div>
-<button onclick="adicionar('Brigadeiro',11)">
+
+<button onclick="adicionar('Creme de Avelã com Morango',11)">
 +
 </button>
-</div>
-</div>
+
 </div>
 
+</div>
+
+</div>
+
+<!-- Leite Condensado -->
+
 <div class="produto">
-<img src="URL_DA_IMAGEM">
+
+<img src="media/images/leite-condensado.jpg">
+
 <div class="conteudo">
+
 <h3>Leite Condensado</h3>
+
 <p>
-Recheio cremoso de brigadeiro tradicional.
+A clássica tapioca doce com uma generosa camada de leite condensado.
 </p>
+
 <div class="preco">
 R$ 11,00
 </div>
+
 <div class="controle">
-<div class="quantidade" id="qtd-Brigadeiro">
+
+<div class="quantidade" id="qtd-LeiteCondensado">
 0
 </div>
-<button onclick="adicionar('Brigadeiro',11)">
+
+<button onclick="adicionar('Leite Condensado',11)">
 +
 </button>
+
 </div>
+
 </div>
+
 </div>
+
+<!-- Creme de Avelã -->
 
 <div class="produto">
-<img src="URL_DA_IMAGEM">
+
+<img src="media/images/creme-avela.jpg">
+
 <div class="conteudo">
-<h3>Brigadeiro</h3>
+
+<h3>Creme de Avelã</h3>
+
 <p>
-Recheio cremoso de brigadeiro tradicional.
+Cremosidade e sabor irresistível para os amantes de chocolate.
 </p>
+
 <div class="preco">
 R$ 11,00
 </div>
+
 <div class="controle">
-<div class="quantidade" id="qtd-Brigadeiro">
+
+<div class="quantidade" id="qtd-CremeAvela">
 0
 </div>
-<button onclick="adicionar('Brigadeiro',11)">
+
+<button onclick="adicionar('Creme de Avelã',11)">
 +
 </button>
+
 </div>
+
 </div>
+
 </div>
+
+<!-- Brigadeiro -->
 
 <div class="produto">
-<img src="URL_DA_IMAGEM">
+
+<img src="media/images/brigadeiro.jpg">
+
 <div class="conteudo">
+
 <h3>Brigadeiro</h3>
+
 <p>
-Recheio cremoso de brigadeiro tradicional.
+Recheio cremoso de brigadeiro que derrete a cada mordida.
 </p>
+
 <div class="preco">
 R$ 11,00
 </div>
+
 <div class="controle">
+
 <div class="quantidade" id="qtd-Brigadeiro">
 0
 </div>
+
 <button onclick="adicionar('Brigadeiro',11)">
 +
 </button>
+
 </div>
+
 </div>
+
 </div>
+
+<!-- Beijinho -->
 
 <div class="produto">
-<img src="URL_DA_IMAGEM">
+
+<img src="media/images/beijinho.jpg">
+
 <div class="conteudo">
-<h3>Brigadeiro</h3>
+
+<h3>Beijinho</h3>
+
 <p>
-Recheio cremoso de brigadeiro tradicional.
+Delicioso recheio de coco com o sabor tradicional do beijinho.
 </p>
+
 <div class="preco">
 R$ 11,00
 </div>
+
 <div class="controle">
-<div class="quantidade" id="qtd-Brigadeiro">
+
+<div class="quantidade" id="qtd-Beijinho">
 0
 </div>
-<button onclick="adicionar('Brigadeiro',11)">
+
+<button onclick="adicionar('Beijinho',11)">
 +
 </button>
+
 </div>
+
 </div>
+
 </div>
+
+<!-- Dois Amores -->
 
 <div class="produto">
-<img src="URL_DA_IMAGEM">
+
+<img src="media/images/dois-amores.jpg">
+
 <div class="conteudo">
-<h3>Brigadeiro</h3>
+
+<h3>Dois Amores</h3>
+
 <p>
-Recheio cremoso de brigadeiro tradicional.
+Chocolate ao leite e chocolate branco juntos em uma só tapioca.
 </p>
+
 <div class="preco">
 R$ 11,00
 </div>
+
 <div class="controle">
-<div class="quantidade" id="qtd-Brigadeiro">
+
+<div class="quantidade" id="qtd-DoisAmores">
 0
 </div>
-<button onclick="adicionar('Brigadeiro',11)">
+
+<button onclick="adicionar('Dois Amores',11)">
 +
 </button>
+
 </div>
+
 </div>
+
+</div>
+
+<!-- Romeu e Julieta -->
+
+<div class="produto">
+
+<img src="media/images/romeu-julieta.jpg">
+
+<div class="conteudo">
+
+<h3>Romeu e Julieta</h3>
+
+<p>
+A tradicional combinação de queijo mussarela com goiabada.
+</p>
+
+<div class="preco">
+R$ 11,00
+</div>
+
+<div class="controle">
+
+<div class="quantidade" id="qtd-RomeuJulieta">
+0
+</div>
+
+<button onclick="adicionar('Romeu e Julieta',11)">
++
+</button>
+
+</div>
+
 </div>
 
 </div>
 
 </div>
+
 </section>
 <div class="painel-carrinho" id="carrinho">
 
@@ -432,6 +583,6 @@ Feito com carinho e muito sabor!
 </div>
 
 <script src="js/script.js"></script>
-<script src="js/sala3.js"></script>
+<script src="js/sala4.js"></script>
 </body>
 </html>
