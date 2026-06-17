@@ -34,29 +34,14 @@ function confirmarRecheio(tipo){
 
 
 function finalizarPedido(){
-
     if(quantidadeTotal === 0){
         alert("Seu carrinho está vazio!");
         return;
     }
 
-    let mensagem =
-    "Pedido - Tapioca Sem Vergonha\n\n";
-
-    for(let item in pedidos){
-        mensagem +=
-        `${item} x${pedidos[item].quantidade}\n`;
-    }
-
-    mensagem +=
-    `\nTotal: R$ ${total.toFixed(2)}`;
-
-    const numero = "5581995606870";
-
-    const url =
-    `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
-
-    window.open(url, "_blank");
+    document
+    .getElementById("popupNome")
+    .classList.add("abrir");
 }
 
 
@@ -156,5 +141,52 @@ function atualizarTudo(){
             elemento.innerHTML = quantidade;
         }
     }
+
+}
+
+function fecharPopupNome(){
+
+    document
+    .getElementById("popupNome")
+    .classList.remove("abrir");
+
+}
+
+function enviarPedido(){
+
+    let nomeCliente =
+    document.getElementById("nomeCliente")
+    .value
+    .trim();
+
+    if(nomeCliente === ""){
+        alert("Informe seu nome.");
+        return;
+    }
+
+    let mensagem =
+    `Pedido - Tapioca Sem Vergonha\n\n`;
+
+    mensagem +=
+    `Cliente: ${nomeCliente}\n\n`;
+
+    for(let item in pedidos){
+
+        mensagem +=
+        `${item} x${pedidos[item].quantidade}\n`;
+
+    }
+
+    mensagem +=
+    `\nTotal: R$ ${total.toFixed(2)}`;
+
+    const numero = "5581995606870";
+
+    const url =
+    `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+
+    fecharPopupNome();
+
+    window.open(url, "_blank");
 
 }

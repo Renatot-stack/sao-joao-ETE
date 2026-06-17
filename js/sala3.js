@@ -39,18 +39,48 @@ function confirmarPedido(tipo){
 }
 
 function finalizarPedido(){
-
     if(quantidadeTotal === 0){
         alert("Seu carrinho está vazio!");
         return;
     }
 
+    document
+    .getElementById("popupNome")
+    .classList.add("abrir");
+}
+
+
+function fecharPopupNome(){
+
+    document
+    .getElementById("popupNome")
+    .classList.remove("abrir");
+
+}
+
+function enviarPedido(){
+
+    let nomeCliente =
+    document.getElementById("nomeCliente")
+    .value
+    .trim();
+
+    if(nomeCliente === ""){
+        alert("Informe seu nome.");
+        return;
+    }
+
     let mensagem =
-    "Pedido - Churrasco 100 Parea\n\n";
+    `Pedido - Tapioca Sem Vergonha\n\n`;
+
+    mensagem +=
+    `Cliente: ${nomeCliente}\n\n`;
 
     for(let item in pedidos){
+
         mensagem +=
         `${item} x${pedidos[item].quantidade}\n`;
+
     }
 
     mensagem +=
@@ -61,8 +91,12 @@ function finalizarPedido(){
     const url =
     `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
 
+    fecharPopupNome();
+
     window.open(url, "_blank");
+
 }
+
 
 function atualizarTudo(){
 
