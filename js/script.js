@@ -103,49 +103,27 @@ function atualizarTudo(){
 
     // Atualiza os números dos cards
 
-    let nomes = ["Carne","Frango","Linguiça","Queijo"];
+    const mapaIds = {
+        "Boi": "qtd-Boi",
+        "Frango": "qtd-Frango",
+        "Frango com Bacon": "qtd-FrangoBacon",
+        "Misto": "qtd-Misto",
+        "Pão de Alho": "qtd-PaoAlho",
+        "Macaxeira": "qtd-Macaxeira",
+        "Queijo": "qtd-Queijo"
+    };
 
-    nomes.forEach(nome => {
+    for(let nome in mapaIds){
 
         let elemento =
-        document.getElementById("qtd-"+nome);
+        document.getElementById(mapaIds[nome]);
 
         if(elemento){
             elemento.innerHTML =
-            pedidos[nome] ?
-            pedidos[nome].quantidade :
-            0;
+                pedidos[nome]
+                ? pedidos[nome].quantidade
+                : 0;
         }
+    };
 
-    });
-
-}
-
-
-// Finalizar pedido
-
-function finalizarPedido(){
-
-    if(quantidadeTotal === 0){
-        alert("Seu carrinho está vazio!");
-        return;
-    }
-
-    let mensagem =
-    "Pedido - Churrasco 100 Parea\n\n";
-
-    for(let item in pedidos){
-        mensagem +=
-        `${item} x${pedidos[item].quantidade}\n`;
-    }
-
-    mensagem +=
-    `\nTotal: R$ ${total.toFixed(2)}`;
-
-    const numero = "5581991272066";
-
-    const url =
-    `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
-
-    window.open(url, "_blank");
 }

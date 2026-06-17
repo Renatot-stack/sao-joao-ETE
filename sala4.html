@@ -4,14 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Churrasco 100 Parea | Sala Elite</title>
+<title>Tapioca Sem Vergonha | Sala Lendários</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/cardapio.css">
-<link rel="stylesheet" href="css/sala3.css">
 
 <style>
 
@@ -26,31 +25,6 @@
 
 <body>
 
-<div id="popupAcompanhamento" class="popup">
-
-    <div class="popup-conteudo">
-
-        <h2>Escolha seu acompanhamento</h2>
-
-        <button onclick="confirmarPedido('normal')">
-            Apenas Espetinho - R$ 8
-        </button>
-
-        <button onclick="confirmarPedido('farofa')">
-            Com Farofa - R$ 10
-        </button>
-
-        <button onclick="confirmarPedido('vinagrete')">
-            Com Vinagrete - R$ 10
-        </button>
-
-        <button id="cancelar" onclick="fecharPopup()">
-            Cancelar
-        </button>
-
-    </div>
-
-</div>
 
 <header class="topo">
 
@@ -72,7 +46,7 @@ São João - ETE JNPR
 
 
 <div class="mascote">
-<img src="media/images/logo_sala3.jpeg">
+<img src="media/images/logomarca.jpeg">
 </div>
 
 
@@ -159,12 +133,11 @@ Grande show da noite - Deb Lima
 Nosso Cardápio
 </h2>
 
-<h3 class="titulo">
-Opções de Churrasco
-</h3>
-
 
 <div class="grade-cardapio">
+
+
+<!-- Carne -->
 
 <div class="produto">
 
@@ -172,14 +145,14 @@ Opções de Churrasco
 Mais Pedido
 </div>
 
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRgPOnKu8wReqt7U5FooBKEHeY5i2-lAD9xi9gGV7hDg&s=10">
+<img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd">
 
 <div class="conteudo">
 
-<h3>Churrasco de Boi</h3>
+<h3>Carne</h3>
 
 <p>
-Carne bovina selecionada. Seu encanto.
+Carne bovina selecionada, temperada com ervas e assada lentamente na brasa.
 </p>
 
 <div class="preco">
@@ -188,13 +161,13 @@ R$ 8,00
 
 <div class="controle">
 
-<button onclick="remover('Boi',8)">−</button>
+<button onclick="remover('Carne',8)">−</button>
 
-<div class="quantidade" id="qtd-Boi">
+<div class="quantidade" id="qtd-Carne">
 0
 </div>
 
-<button onclick="abrirPopup('Boi',8)">
+<button onclick="adicionar('Carne',8)">
 +
 </button>
 
@@ -217,17 +190,17 @@ R$ 8,00
 <h3>Frango</h3>
 
 <p>
-Porque você disse Adeus.
+Frango suculento marinado em temperos especiais e preparado na churrasqueira.
 </p>
 
 <div class="preco">
-R$ 8,00
+R$ 7,00
 </div>
 
 
 <div class="controle">
 
-<button onclick="remover('Frango',8)">
+<button onclick="remover('Frango',7)">
 −
 </button>
 
@@ -237,7 +210,7 @@ R$ 8,00
 </div>
 
 
-<button onclick="abrirPopup('Frango',8)">
+<button onclick="adicionar('Frango',7)">
 +
 </button>
 
@@ -249,43 +222,46 @@ R$ 8,00
 </div>
 
 
+<!-- Linguiça -->
+
+
 <div class="produto">
 
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3RYagmjqa_Xf0fICVjuMVEo4DY7pKmD2_VCRdpvUIQQ&s=10">
+<img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1">
 
 
 <div class="conteudo">
 
 
 <h3>
-Frango com Bacon
+Linguiça
 </h3>
 
 
 <p>
-Saudade de meu bem.
+Linguiça assada no ponto perfeito, trazendo o verdadeiro sabor junino.
 </p>
 
 
 <div class="preco">
-R$ 8,00
+R$ 7,00
 </div>
 
 
 <div class="controle">
 
 
-<button onclick="remover('Frango com Bacon',8)">
+<button onclick="remover('Linguiça',7)">
 −
 </button>
 
 
-<div class="quantidade" id="qtd-FrangoBacon">
+<div class="quantidade" id="qtd-Linguiça">
 0
 </div>
 
 
-<button onclick="abrirPopup('Frango com Bacon',8)">
+<button onclick="adicionar('Linguiça',7)">
 +
 </button>
 
@@ -297,94 +273,21 @@ R$ 8,00
 </div>
 <!-- Queijo -->
 <div class="produto">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBEO6HscsBwfptozhWXDZ115R0LgJPWaK70TFpy7OjEA&s=10">
+<img src="https://images.unsplash.com/photo-1544025162-d76694265947">
 <div class="conteudo">
 <h3>
-Churrasco Misto
+Queijo Coalho
 </h3>
 <p>
-Jeito do mato.
+Queijo dourado na brasa, crocante por fora e macio por dentro.
 </p>
 <div class="preco">
-R$ 8,00
+R$ 6,00
 </div>
 <div class="controle">
-<button onclick="remover('Misto',8)">
+<button onclick="remover('Queijo',6)">
 −
 </button>
-<div class="quantidade" id="qtd-Misto">
-0
-</div>
-<button onclick="abrirPopup('Misto',8)">
-+
-</button>
-</div>
-</div>
-</div>
-</div>
-
-<h3 class="titulo">
-Acompanhamnetos Adicionais
-</h3>
-<div class="grade-cardapio">
-
-
-<div class="produto">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOqIpjd0ne_qArif5JYDNjR1DoBIliHAAW6p1gM5cl_A&s=10">
-<div class="conteudo">
-<h3>Pão de Alho</h3>
-<p>
-Eu tô afim de alguém.
-</p>
-<div class="preco">
-R$ 6,00
-</div>
-<div class="controle">
-<button onclick="remover('Pão de Alho',6)">−</button>
-<div class="quantidade" id="qtd-PaoAlho">
-0
-</div>
-<button onclick="adicionar('Pão de Alho',6)">
-+
-</button>
-</div>
-</div>
-</div>
-
-<div class="produto">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZZ8wI8LsGKsB3_NtyHP7fkXWvQgvWwtLtH3ExMBTYJMQ4pC-zjMpqRxOr&s=10">
-<div class="conteudo">
-<h3>Macaxeira</h3>
-<p>
-Saudade da minha terra.
-</p>
-<div class="preco">
-R$ 6,00
-</div>
-<div class="controle">
-<button onclick="remover('Macaxeira',6)">−</button>
-<div class="quantidade" id="qtd-Macaxeira">
-0
-</div>
-<button onclick="adicionar('Macaxeira',6)">
-+
-</button>
-</div>
-</div>
-</div>
-
-<div class="produto">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOk1b1UGD-IMK6r5DI-b5rYz4z3dXeolK11oDtKz0x5g&s=10">
-<div class="conteudo">
-<h3>Queijo</h3>
-<p>
-A loira do carro branco.
-</p>
-<div class="preco">
-R$ 6,00
-</div>
-<div class="controle">
-<button onclick="remover('Queijo',6)">−</button>
 <div class="quantidade" id="qtd-Queijo">
 0
 </div>
@@ -394,7 +297,6 @@ R$ 6,00
 </div>
 </div>
 </div>
-
 </div>
 </section>
 <div class="painel-carrinho" id="carrinho">
@@ -437,6 +339,6 @@ Feito com sabor, tradição e muito São João
 </div>
 
 <script src="js/script.js"></script>
-<script src="js/sala3.js"></script>
+<script src="js/sala4.js"></script>
 </body>
 </html>
