@@ -1,0 +1,60 @@
+:root{
+    /* Fundos */
+    --cor-fundo: #FFF9EC;
+    --cor-fundo-secundaria: #FFF3D6;
+    --cor-fundo-card: #FFFFFF;
+    --cor-fundo-card-atracao: #FFF8E8;
+    --cor-fundo-footer: #F4E3BE;
+
+    /* Destaques */
+    --cor-dourado: #ffd154;
+    --cor-dourado-escuro: #ffc7a1;
+    --cor-laranja-brilho: #b37a00;
+
+    /* Textos */
+    --cor-texto: #4D351A;
+    --cor-texto-suave: #6D573B;
+    --cor-texto-marrom: #5C3D1E;
+    --cor-texto-marrom-escuro: #3E250D;
+    --cor-texto-marrom-medio: #6B4423;
+    --cor-texto-dourado-suave: #8B6A2B;
+
+    /* Alertas */
+    --cor-vermelho: #D84A4A;
+
+    /* Sombras */
+    --sombra-preta: rgba(0,0,0,.15);
+
+    /* Transparências */
+    --overlay-topo: rgba(255,248,230,.90);
+    --overlay-hero-1: rgba(255,245,220,.55);
+    --overlay-hero-2: rgba(255,235,180,.75);
+
+    /* Bordas */
+    --borda-dourada: rgba(255, 187, 0, 0.35);
+
+    /* Sombras de componentes */
+    --sombra-carrinho: rgba(0,0,0,.20);
+    --sombra-botao: rgba(0,0,0,.15);
+}
+.hero{
+    background:
+    linear-gradient(
+        var(--overlay-hero-1),
+        var(--overlay-hero-2)
+    ),
+    url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfKj8SmOSbABeQCbsS36Gp6jxiptu703fF07DALZwj0g&s=10");
+}
+
+.produto{
+    border: 3px solid var(--borda-dourada);
+}
+.topo{
+    border-bottom: 2px solid var(--cor-dourado);
+}
+.popup-conteudo{
+    background: var(--cor-fundo-secundaria);
+}
+a {
+    color: rgb(255, 64, 96);
+}

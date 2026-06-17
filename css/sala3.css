@@ -1,49 +1,39 @@
-.popup{
-    display:none;
+:root{
+    --cor-fundo: #2d160b;
+    --cor-fundo-secundaria: #2a1208;
+    --cor-fundo-card: #442314;
+    --cor-fundo-card-atracao: #412012;
+    --cor-fundo-footer: #1a0a05;
 
-    position:fixed;
-    top:0;
-    left:0;
+    --cor-dourado: #ffd700;
+    --cor-dourado-escuro: #ffb700;
+    --cor-laranja-brilho: #ff9900;
 
-    width:100%;
-    height:100%;
+    --cor-texto: #ffffff;
+    --cor-texto-suave: #ddd;
+    --cor-texto-marrom: #3a1c08;
+    --cor-texto-marrom-escuro: #311400;
+    --cor-texto-marrom-medio: #3b1d10;
+    --cor-texto-dourado-suave: #d9b66a;
 
-    background:rgba(0,0,0,.7);
+    --cor-vermelho: #b30000;
 
-    z-index:9999;
+    --sombra-preta: black;
 
-    justify-content:center;
-    align-items:center;
+    --overlay-topo: rgba(35,15,5,.85);
+    --overlay-hero-1: rgba(20,10,5,.75);
+    --overlay-hero-2: rgba(20,10,5,.85);
+
+    --borda-dourada: rgba(255,215,0,.4);
+
+    --sombra-carrinho: rgba(0,0,0,.6);
+    --sombra-botao: rgba(0,0,0,.4);
 }
-
-#cancelar {
-    background-color: rgb(194, 0, 0);
-    color: white;
-}
-
-.popup-conteudo button {
-    background-color: gold;
-}
-
-.popup.abrir{
-    display:flex;
-}
-
-.popup-conteudo{
-    background:#2d160b;
-    padding:30px;
-    border-radius:20px;
-    width:90%;
-    max-width:350px;
-
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-}
-
-.popup-conteudo button{
-    padding:12px;
-    border:none;
-    border-radius:10px;
-    cursor:pointer;
+.hero{
+    background:
+    linear-gradient(
+        var(--overlay-hero-1),
+        var(--overlay-hero-2)
+    ),
+    url("https://images.unsplash.com/photo-1555939594-58d7cb561ad1");
 }
