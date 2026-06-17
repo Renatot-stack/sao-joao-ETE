@@ -71,7 +71,7 @@ function enviarPedido(){
     }
 
     let mensagem =
-    `Pedido - Tapioca Sem Vergonha\n\n`;
+    `Pedido - Churraco 100 Parea\n\n`;
 
     mensagem +=
     `Cliente: ${nomeCliente}\n\n`;

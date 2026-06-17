@@ -71,7 +71,7 @@ function enviarPedido(){
     }
 
     let mensagem =
-    `Pedido - Tapioca Sem Vergonha\n\n`;
+    `Pedido - Hambúrguer da Pisadinha\n\n`;
 
     mensagem +=
     `Cliente: ${nomeCliente}\n\n`;
@@ -86,7 +86,7 @@ function enviarPedido(){
     mensagem +=
     `\nTotal: R$ ${total.toFixed(2)}`;
 
-    const numero = "558796323079";
+    const numero = "558186574537";
 
     const url =
     `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
